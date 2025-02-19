@@ -4,7 +4,7 @@ from urllib.request import urlopen
 url = "http://olympus.realpython.org/profiles/aphrodite"
 page = urlopen(url)
 html_bytes = page.read()
-html = html_bytes.decode()
+html = html_bytes.decode("utf-8")
 
 title_index = html.find("<title>")
 start_index = title_index + len("<title>")
@@ -24,14 +24,16 @@ url = "...com"
 page = urlopen(url)
 # read the page and call it html_bytes
 html_bytes = page.read()
-# decode the page and call it html
-html = html_bytes.decode()
+# decode the page as utf8 and call it html
+html = html_bytes.decode("utf-8")
 #find the index of the title and call it title_index
+print(html)
 title_index = html.find("<title>")
 # find the start index of the title and call it start_index
 start_index = title_index + len("<title>")
 # find the end index of the title and call it end_index
 end_index = html.find("</title")
-
+# make a new variable called title
+title = html[start_index:end_index]
 
 
