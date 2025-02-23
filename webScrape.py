@@ -2,6 +2,7 @@
 # First example with clean html:
 
 from urllib.request import urlopen
+import re
 # url = "http://olympus.realpython.org/profiles/aphrodite"
 # page = urlopen(url)
 # html_bytes = page.read()
@@ -41,3 +42,13 @@ url = "http://olympus.realpython.org/profiles/poseidon"
 page = urlopen(url)
 html = page.read().decode("utf-8")
 start_index = html.find("<title>") + len("<title>")
+end_index = html.find("</title>")
+title = html[start_index:end_index]
+print(title) # returns everything from start of html up to </title> because <title> doesn't exist
+
+# * means 0 or more of letter before astrix 
+pattern = "ab*c"
+strings = ["ac","abc","ab", "abbbbbbbbbc", "abcccccc", "abcd", "ABC"]
+for string in strings:
+    print(re.findall(pattern, string,re.IGNORECASE))
+
