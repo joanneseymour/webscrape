@@ -47,8 +47,20 @@ title = html[start_index:end_index]
 print(title) # returns everything from start of html up to </title> because <title> doesn't exist
 
 # * means 0 or more of letter before astrix 
-pattern = "ab*c"
-strings = ["ac","abc","ab", "abbbbbbbbbc", "abcccccc", "abcd", "ABC"]
-for string in strings:
-    print(re.findall(pattern, string,re.IGNORECASE))
+pattern_star = "ab*c"
+result_star = ""
+strings_star = ["ac","abc","ab", "abbbbbbbbbc", "abcccccc", "abcd", "ABC"]
+print("Expressions with *")
+for string_star in strings_star:
+    result_star = re.findall(pattern_star, string_star,re.IGNORECASE)
+    print(f"String: {string_star}, Result: {result_star}")
+
+# . means any single character
+pattern_dot = "d.f"
+strings_dot = ["d", "df", "def", "deef"]
+print("Expressions with dot")
+for string_dot in strings_dot:
+    result_dot = 
+
+
 
