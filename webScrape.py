@@ -57,10 +57,11 @@ for string_star in strings_star:
 
 # . means any single character
 pattern_dot = "d.f"
-strings_dot = ["d", "df", "def", "deef"]
-print("Expressions with dot")
+strings_dot = ["d", "df", "def", "deef", "edef"]
+print("\nPattern: d.f")
 for string_dot in strings_dot:
-    result_dot = 
+    result_dot = re.findall(pattern_dot,string_dot)
+    print(f"String: {string_dot}, result: {result_dot}")
 
 
 
