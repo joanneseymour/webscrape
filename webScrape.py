@@ -63,5 +63,17 @@ for string_dot in strings_dot:
     result_dot = re.findall(pattern_dot,string_dot)
     print(f"String: {string_dot}, result: {result_dot}")
 
+# .* means any character any number of times
+pattern_dot_star = "d.*f"
+strings_dot_star = ["d", "df", "def", "deef", "edef"]
+print("\nPattern: d.*f")
+for string_dot_star in strings_dot_star:
+    result_dot_star = re.findall(pattern_dot_star,string_dot_star)
+    print(f"String: {string_dot_star}, result: {result_dot_star}")
 
+# experimenting with re.search
+
+search_results = re.search(pattern_dot_star, "d, df, def, deef, edef")
+print(f"All results of re.search: {search_results}")
+# only returns first match???
 
