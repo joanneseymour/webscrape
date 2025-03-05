@@ -75,14 +75,21 @@ for string_dot_star in strings_dot_star:
 
 # experimenting with re.search
 
-search_results = re.search(pattern_dot_star, "d, df, def, deef, edef")
+print(f"\nResults with re.search:\n")
 
-print(f"\nResults with re.search:\n\n {search_results}\n")
+for string_dot_star in strings_dot_star:
+    
+    result_dot_star = re.search(pattern_dot_star, string_dot_star)
+    print(f"String: {string_dot_star}, result: {result_dot_star}")
 
-group_search_results = search_results.group()
+# What about re.search().group()
+# Try re.search on a long string
+long_string = "d df def deef ede"
+long_string_search_result = re.search(pattern_dot_star, long_string)
+print(f"Search result of long string: {long_string_search_result}")
+# Includes the first d because * makes it greedy
 
-print(f"Results with group():\n\n {group_search_results}\n")
+# Then try re.search().group() on that long string
 
-# Why is it the same
 
 
