@@ -75,7 +75,7 @@ for string_dot_star in strings_dot_star:
 
 # experimenting with re.search
 
-print(f"\nResults with re.search:\n")
+print(f"\nResults with re.search through array:\n")
 
 for string_dot_star in strings_dot_star:
     
@@ -84,12 +84,27 @@ for string_dot_star in strings_dot_star:
 
 # What about re.search().group()
 # Try re.search on a long string
-long_string = "d df def deef ede"
+long_string = "d df def deef ede def aaaa"
 long_string_search_result = re.search(pattern_dot_star, long_string)
-print(f"Search result of long string: {long_string_search_result}")
+print(f"\nLong string: {long_string}\nSearch result of long string: {long_string_search_result}")
 # Includes the first d because * makes it greedy
 
 # Then try re.search().group() on that long string
 
+long_string_search_result = re.search(pattern_dot_star, long_string).group()
+print(f"\nResults of group:\n{long_string_search_result}")
 
+# Trying out sub() now
+string_to_sub = "Everything is <replaced> if it's in <brackets>"
+string_to_sub = re.sub("<.*>", "hello", string_to_sub)
+print(string_to_sub)
+
+# The greedy version (*) matches one large chunk of the string, so only one replacement happens.
+
+# The non-greedy version (?) matches one chunk, then another, then another.
+
+# Imagine you have a plate of cookies.
+
+#     A greedy person takes all the cookies at once.
+#     A non-greedy person takes one cookie, then another, then another.
 
